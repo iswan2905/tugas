@@ -55,6 +55,8 @@ Route::get('/siswa3', function(){
 Route::get('/siswa4', function(){
 	$sis = App\siswa::find(2);
 	$sis->nama = "Tantan Andriansyah";
+	$sis->tanggal_lahir= "2000-04-19";
+	$sis->jenis_kelamin="Laki-laki";
 	$sis->save();
 	return $sis;
 });
