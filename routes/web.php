@@ -15,6 +15,46 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/testmodel', function(){
+	$query = App\Post::all();
+	return $query;
+});
+//mencari model berdasarkan id
+Route::get('/testmodel1', function(){
+	$query = App\Post::find(1);
+	return $query;
+});
+//mencari model berdasarkan title
+Route::get('/testmodel2', function(){
+	$query = App\Post::where('title', 'like', '%cepat nikah%')->get();
+	return $query;
+});
+//mengubah record, (hapus semua isi function)
+Route::get('/testmodel3', function(){
+	$post = App\Post::find(1);
+	$post->title = "Ciri Keluarga Sakinah";
+	$post->save();
+	return $post;
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/siswa', function(){
+	$sis = App\siswa::all();
+	return $sis;
+});
+
+Route::get('/siswa2', function(){
+	$sis = App\siswa::find(2);
+	return $sis;
+});
+
+Route::get('/siswa3', function(){
+	$sis = App\siswa::where('nama', 'like', '%iswanto%')->get();
+	return $sis;
+});
+
+Route::get('/siswa4', function(){
+	$sis = App\siswa::find(2);
+	$sis->nama = "Tantan Andriansyah";
+	$sis->save();
+	return $sis;
+});
