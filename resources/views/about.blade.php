@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>About</title>
-</head>
-<body>
-		Ini Halaman About
-</body>
-</html>
+@extends('layouts.master')
+@section('content')
+	<h1>Halo</h1>
+	Selamat Datang di WebApp saya.<br>
+	Laravel, emang keren banget!
+@endsection

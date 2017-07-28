@@ -60,3 +60,19 @@ Route::get('/siswa4', function(){
 	$sis->save();
 	return $sis;
 });
+
+Route::get('/about', function(){
+	return view('about');
+});
+
+Route::get('/latihan', function(){
+	return view('latihan');
+});
+
+Route::get('/latihan2', function(){
+	return view('latihan2');
+});
+
+Route::get('/latihan3', function(){
+	return view('latihan3');
+});
